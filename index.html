@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Time</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container > div {
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+        padding: 2em;
+        height: 10em;
+        width: 20em;
+      }
+      #Time {
+        cursor: pointer;
+        border: 2px solid palevioletred;
+        width: 10rem;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>The current Time is:</h1>
+        <h1 id="Time" onclick="getCurrentTime()">Show Time</h1>
+      </div>
+    </div>
+
+    <script>
+      function getTime() {
+        let today = new Date();
+        let time =
+          today.getHours() +
+          ":" +
+          today.getMinutes() +
+          ":" +
+          today.getSeconds();
+        document.getElementById("Time").innerHTML = time;
+      }
+
+      function getCurrentTime() {
+        getTime();
+        setInterval(getTime, 1000);
+      }
+    </script>
+  </body>
+</html>

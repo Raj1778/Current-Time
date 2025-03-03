@@ -16,6 +16,8 @@
         padding: 2em;
         height: 10em;
         width: 20em;
+        text-align: center;
+        border-radius: 10px;
       }
       #Time {
         cursor: pointer;
@@ -25,12 +27,15 @@
         padding: 1rem;
         text-align: center;
         box-sizing: border-box;
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: white;
+        border-radius: 5px;
       }
       @media (max-width: 600px) {
         .container > div {
           width: 90%;
           padding: 1.5em;
-          text-align: center;
         }
 
         #Time {
@@ -52,7 +57,7 @@
     <script>
       function getTime() {
         let today = new Date();
-        let hours = today.getHours();
+        let hours = today.getHours().toString().padStart(2, "0");
         let minutes = today.getMinutes().toString().padStart(2, "0");
         let seconds = today.getSeconds().toString().padStart(2, "0");
 
